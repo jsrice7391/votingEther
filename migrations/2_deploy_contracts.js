@@ -1,8 +1,10 @@
-var ConvertLib = artifacts.require("./ConvertLib.sol");
-var MetaCoin = artifacts.require("./MetaCoin.sol");
-
-module.exports = function(deployer) {
-  deployer.deploy(ConvertLib);
-  deployer.link(ConvertLib, MetaCoin);
-  deployer.deploy(MetaCoin);
+// Sets the name of the Contract
+var Voting = artifacts.require("./Voting.sol");
+module.exports = function (deployer) {
+  // Deplyos that contract with the constructor arguments and theb gas price.
+  deployer.deploy(Voting, ['Rama', 'Nick', 'Jose'], {
+    gas: 500000
+  });
 };
+
+
